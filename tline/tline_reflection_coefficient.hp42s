@@ -1,0 +1,13 @@
+@ This calculates the transmission line
+@ reflection cofficient given the 
+@ characteristic impedance Z0 and
+@ terminating impedance ZL
+01▸LBL "RHO"
+02 INPUT "Z0"
+03 INPUT "ZL"
+04 RCL "ZL"
+05 RCL- "Z0"
+06 RCL "ZL"
+07 RCL+ "Z0"
+08 ÷
+09 END

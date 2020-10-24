@@ -1,0 +1,17 @@
+@ This calculates the propagation constant
+@ of a lossless transmission line with
+@ inductance per unit length L and
+@ capacitance per unit length C
+01▸LBL "BETA"
+02 INPUT "F"
+03 INPUT "L"
+04 INPUT "C"
+05 RCL "L"
+06 RCL× "C"
+07 SQRT
+08 RCL× "F"
+09 2
+10 ×
+11 PI
+12 ×
+13 END

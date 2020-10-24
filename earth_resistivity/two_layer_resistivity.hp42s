@@ -1,0 +1,57 @@
+@ This calculates the resistivity measured
+@ with the Wenner Method for a two-layer
+@ Earth model with top-layer resistivity
+@ P1, bottom-layer resistivity P2
+@ top-layer height H and probe spacing A
+01▸LBL "RHO2"
+02 INPUT "P1"
+03 INPUT "P2"
+04 INPUT "H"
+05 INPUT "A"
+06 RCL "P2"
+07 RCL- "P1"
+08 RCL "P2"
+09 RCL+ "P1"
+10 ÷
+11 STO "K"
+12 1
+13 STO "P"
+14 1
+15 STO "N"
+16▸LBL "ACC"
+17 RCL "K"
+18 RCL "N"
+19 Y^X
+20 STO "KN"
+21 2
+22 RCL× "N"
+23 RCL× "H"
+24 RCL÷ "A"
+25 X^2
+26 STO "X"
+27 1
+28 RCL+ "X"
+29 SQRT
+30 1/X
+31 RCL× "KN"
+32 4
+33 ×
+34 STO+ "P"
+35 4
+36 RCL+ "X"
+37 SQRT
+38 1/X
+39 RCL "KN"
+40 ×
+41 4
+42 ×
+43 STO- "P"
+44 1
+45 STO+ "N"
+46 100
+47 RCL- "N"
+48 X≥0?
+49 GTO "ACC"
+50 RCL "P"
+51 RCL× "P1"
+52 END

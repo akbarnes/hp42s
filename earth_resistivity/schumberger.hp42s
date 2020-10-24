@@ -1,0 +1,15 @@
+@ This computes ground resisivity given 
+@ measured ground resistance using the
+@ Schlumberger method
+LBL "SCHR"
+INPUT "R"
+INPUT "A"
+INPUT "C"
+RCL "C"
+RCL+ "A"
+RCL× "R"
+RCL× "C"
+RCL÷ "A"
+PI
+×
+END

@@ -1,0 +1,33 @@
+@ This calculates the propagation constant
+@ of a lossy transmission line with
+@ series resistance per unit length R
+@ inductance per unit length L
+@ parallel conductance per unit length G
+@ capacitance per unit length C
+01▸LBL "GAMA"
+02 INPUT "F"
+03 INPUT "R"
+04 INPUT "L"
+05 INPUT "G"
+06 INPUT "C"
+07 RCL "L"
+08 RCL× "F"
+09 2
+10 ×
+11 PI
+12 ×
+13 RCL "R"
+14 X<>Y
+15 COMPLEX
+16 RCL "C"
+17 2
+18 ×
+19 PI
+20 ×
+21 RCL "G"
+22 X<>Y
+23 COMPLEX
+24 ENTER
+25 ×
+26 SQRT
+27 END

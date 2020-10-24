@@ -1,0 +1,14 @@
+@ This computes ground resisivity given 
+@ measured ground resistance using the
+@ Wenner method with equally 
+@ spaced probes
+01▸LBL "WENR"
+02 INPUT "R"
+03 INPUT "A"
+04 RCL "R"
+05 RCL× "A"
+06 2
+07 ×
+08 PI
+09 ×
+10 END
